@@ -1,0 +1,18 @@
+<ceiba = 'www.ceiba.org/jcr/ceiba'>
+<nt = 'http://www.jcp.org/jcr/nt/1.0'>
+<jcr = 'http://www.jcp.org/jcr/1.0'>
+<mix = 'http://www.jcp.org/jcr/mix/1.0'>
+
+[ceiba:component] > mix:title, nt:folder orderable query
+- category (STRING) COPY
+
+[ceiba:page] > nt:hierarchyNode orderable
++ jcr:content (nt:base, nt:unstructured) = nt:unstructured COPY
+
+[ceiba:pagecontent] > mix:created, mix:title, nt:unstructured orderable
+- pageTitle (STRING) COPY
+
+[ceiba:template] > mix:title, nt:hierarchyNode 
+- allowedParents (STRING) multiple COPY
+- allowedChildren (STRING) multiple COPY
+
